@@ -1,0 +1,26 @@
+
+notebooks/
+
+# Artifacts (models, transformed data, etc.)
+src/artifacts/
+artifact/
+
+# Virtual environments
+env/
+venv/
+.venv/
+
+# Dataset folders
+Data/
+
+# Python cache and compiled files
+__pycache__/
+*.pyc
+
+# Logs
+*.log
+
+# IDE files (optional)
+*.code-workspace
+.vscode/
+.idea/
