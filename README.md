@@ -19,74 +19,6 @@ Now the question is how to dynamically predict the type of the text ?. One of th
 5. MongoDB
 
 
-## How to run
-
-
-
-Step 1. Cloning the repository.
-
-
-
-Step 2. Create a conda environment.
-
-```
-
-conda create --prefix venv python=3.8 -y
-
-```
-
-```
-
-conda activate venv/
-
-```
-
-Step 3. Install the requirements
-
-```
-
-pip install -r requirements.txt
-
-```
-
-Step 4. Export the environment variable
-
-
-
-Step 5. Run the application server
-
-```
-
-python app.py
-
-```
-
-Step 6. Train application
-
-```
-
-http://localhost:5000/train
-
-```
-
-Step 7. Prediction application
-
-```
-
-http://localhost:5000/predict
-
-```
-
-
-
-
-
-
-
-
-
-
-
 ## Models Used
 
 * [MultinomialNB](http://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.html)
@@ -107,7 +39,7 @@ From these above models after hyperparameter optimization one model is going to 
 - Data Transformation
 - Model Trainer
 - Model Evaluation
-- Model Pusher
+
 
 **Custom Logger and Exceptions** are used in the Project for better debugging purposes.
 
