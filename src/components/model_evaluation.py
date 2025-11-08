@@ -63,16 +63,13 @@ class ModelEvaluation:
 
     def evaluate_model(self) -> EvaluateModelResponse:
         try:
-            test_df = pd.read_csv(self.data_ingestion_artifact.test_file_path)
-            # x_test = pd.read_csv(self.data_ingestion_artifact.test_file_path)
-            
+            test_df = pd.read_csv(self.data_ingestion_artifact.test_file_path)    
             x_test, y_test = test_df[FEATURE_COLUMN],test_df[[TARGET_COLUMN]]
            
             if hasattr(x_test, "toarray"):
                 x_test = x_test.toarray()
           
             trained_model = self.utils.load_object(file_path=self.model_trainer_artifact.trained_model_file_path)
-            # y.replace(TargetValueMapping().to_dict(), inplace=True)
             y_hat_trained_model = trained_model.predict(x_test)
 
             trained_model_f1_score = f1_score(y_test, y_hat_trained_model)
@@ -83,7 +80,6 @@ class ModelEvaluation:
                 y_hat_best_model = best_model.predict(x_test)
                 best_model_f1_score = f1_score(y_test, y_hat_best_model)
                 best_model_metric_artifact = calculate_metric(best_model, x_test, y_test)
-            # calucate how much percentage training model accuracy is increased/decreased
             tmp_best_model_score = 0 if best_model_f1_score is None else best_model_f1_score
             result = EvaluateModelResponse(trained_model_f1_score=trained_model_f1_score,
                                            best_model_f1_score=best_model_f1_score,
