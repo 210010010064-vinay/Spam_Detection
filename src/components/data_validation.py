@@ -27,16 +27,7 @@ class DataValidation:
         self._schema_config = self.utils.read_schema_config_file()
 
     def validate_schema_columns(self, dataframe: DataFrame) -> bool:
-        """
-        Method Name :   validate_schema_columns
-        Description :   This method validates the schema columns for the particular dataframe 
         
-        Output      :   True or False value is returned based on the schema 
-        On Failure  :   Write an exception log and then raise an exception
-        
-        Version     :   1.2
-        Revisions   :   moved setup to cloud
-        """
         try:
             
             status = len(dataframe.columns) == len(self._schema_config["columns"])
@@ -50,16 +41,7 @@ class DataValidation:
    
 
     def validate_dataset_schema_columns(self, train_set, test_set) -> Tuple[bool, bool]:
-        """
-        Method Name :   validate_dataset_schema_columns
-        Description :   This method validates the schema for schema columns for both train and test set 
-        
-        Output      :   True or False value is returned based on the schema 
-        On Failure  :   Write an exception log and then raise an exception
-        
-        Version     :   1.2
-        Revisions   :   moved setup to cloud
-        """
+       
         logging.info(
             "Entered validate_dataset_schema_columns method of Data_Validation class"
         )
@@ -95,16 +77,7 @@ class DataValidation:
             raise SpamhamException(e, sys)
 
     def initiate_data_validation(self) -> DataValidationArtifact:
-        """
-        Method Name :   initiate_data_validation
-        Description :   This method initiates the data validation component for the pipeline
-        
-        Output      :   Returns bool value based on validation results
-        On Failure  :   Write an exception log and then raise an exception
-        
-        Version     :   1.2
-        Revisions   :   moved setup to cloud
-        """
+     
         logging.info("Entered initiate_data_validation method of Data_Validation class")
 
         try:
