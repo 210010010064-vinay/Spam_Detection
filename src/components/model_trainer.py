@@ -23,7 +23,6 @@ class SpamhamDetectionModel:
         self.trained_model_object = trained_model_object
 
     def predict(self, X: DataFrame) -> DataFrame:
-        logging.info("Entered predict method of srcTruckModel class")
 
         try:
             logging.info("Using the trained model to get predictions")
