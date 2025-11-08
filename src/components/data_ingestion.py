@@ -27,16 +27,7 @@ class DataIngestion:
     
     
     def split_data_as_train_test(self,dataframe: DataFrame) -> Tuple[DataFrame, DataFrame]:
-        """
-        Method Name :   split_data_as_train_test
-        Description :   This method splits the dataframe into train set and test set based on split ratio 
         
-        Output      :   Folder is created in s3 bucket
-        On Failure  :   Write an exception log and then raise an exception
-        
-        Version     :   1.2
-        Revisions   :   moved setup to cloud
-        """
         logging.info("Entered split_data_as_train_test method of Data_Ingestion class")
 
         try:
@@ -63,16 +54,7 @@ class DataIngestion:
     
         
     def export_data_into_feature_store(self)->DataFrame:
-        """
-        Method Name :   export_data_into_feature_store
-        Description :   This method reads data from mongodb and saves it into artifacts. 
-        
-        Output      :   dataset is returned as a DataFrame
-        On Failure  :   Write an exception log and then raise an exception
-        
-        Version     :   0.1
-       
-        """
+
         try:
             logging.info(f"Exporting data from mongodb")
             customer_data = SpamhamData()
@@ -92,16 +74,7 @@ class DataIngestion:
             raise SpamhamException(e,sys)
 
     def initiate_data_ingestion(self) -> DataIngestionArtifact:
-        """
-        Method Name :   initiate_data_ingestion
-        Description :   This method initiates the data ingestion components of training pipeline 
-        
-        Output      :   train set and test set are returned as the artifacts of data ingestion components
-        On Failure  :   Write an exception log and then raise an exception
-        
-        Version     :   1.2
-        Revisions   :   moved setup to cloud
-        """
+       
         logging.info("Entered initiate_data_ingestion method of Data_Ingestion class")
 
         try:
