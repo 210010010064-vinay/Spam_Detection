@@ -15,16 +15,12 @@ class SpamhamData:
     """
 
     def __init__(self):
-        """
-        """
         try:
             self.mongo_client = MongoDBClient(database_name=DATABASE_NAME)
         except Exception as e:
             raise SpamhamException(e, sys)
 
-    def export_collection_as_dataframe(
-        self, collection_name: str, database_name: Optional[str] = None
-    ) -> pd.DataFrame:
+    def export_collection_as_dataframe(self, collection_name: str, database_name: Optional[str] = None) -> pd.DataFrame:
         try:
             """
             export entire collectin as dataframe:
